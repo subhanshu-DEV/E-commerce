@@ -1,8 +1,8 @@
 
-package com.codealpha.ecommerce.controller;
+package com.subhanshu.ecommerce.controller;
 
-import com.codealpha.ecommerce.entity.Product;
-import com.codealpha.ecommerce.service.ProductService;
+import com.subhanshu.ecommerce.entity.Product;
+import com.subhanshu.ecommerce.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

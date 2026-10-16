@@ -1,4 +1,4 @@
-package com.codealpha.ecommerce.entity;
+package com.subhanshu.ecommerce.entity;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

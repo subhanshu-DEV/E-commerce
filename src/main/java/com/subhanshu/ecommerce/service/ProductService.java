@@ -1,17 +1,17 @@
 
-package com.codealpha.ecommerce.service;
+package com.subhanshu.ecommerce.service;
 
-import com.codealpha.ecommerce.entity.Product;
-import com.codealpha.ecommerce.repository.ProductRepository;
+import com.subhanshu.ecommerce.entity.Product;
+import com.subhanshu.ecommerce.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
 public class ProductService {
 
-    private final ProductRepository productRepository;
+    private final com.subhanshu.ecommerce.repository.ProductRepository productRepository;
 
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(com.subhanshu.ecommerce.repository.ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
