@@ -1,4 +1,3 @@
-
 package com.subhanshu.ecommerce.exception;
 
 import org.springframework.http.HttpStatus;
@@ -10,11 +9,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(RuntimeException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ErrorResponse handleRuntimeException(RuntimeException ex) {
-        return new ErrorResponse(404, ex.getMessage());
-    }
+   @ExceptionHandler(ProductNotFoundException.class)
+   @ResponseStatus(HttpStatus.NOT_FOUND)
+   public ErrorResponse handleProductNotFoundException(ProductNotFoundException ex) {
+       return  new ErrorResponse(404, ex.getMessage());
+   }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)

@@ -1,13 +1,26 @@
 package com.subhanshu.ecommerce.entity;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.PositiveOrZero;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PositiveOrZero;
 @Entity
 public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank(message = "Product Name Cannot Be Empty")
+    private String name;
+
+    @PositiveOrZero(message = "Price cannot be negative")
+    private double price;
+
+    @PositiveOrZero(message = "Stock cannot be negative")
+    private int stock;
+@ManyToOne
+@JoinColumn(name = "category_id")
+private Category category;
     public Long getId() {
         return id;
     }
@@ -40,20 +53,11 @@ public class Product {
         this.stock = stock;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Category getCategory() {
+        return category;
+    }
 
-    private Long id;
-
-    @NotBlank(message = "Product Name Cannot Be Empty")
-    private String name;
-
-
-    @PositiveOrZero(message = "Price cannot be negative")
-    private double price;
-
-
-
-    @PositiveOrZero(message = "Stock cannot be negative")
-    private int stock;
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }
